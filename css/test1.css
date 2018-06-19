@@ -6,12 +6,12 @@ body {
     margin:0;
     font-family: 'Montserrat', sans-serif;
     display: grid;
-    grid-template-rows: 80% repeat(2, 1fr);
+    grid-template-rows: 1fr 80% repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 5px;
-    background-color: #36326d;
+    background-color: #334;
     grid-template-areas:
-        /* "header header nav nav nav" */
+        "header header header nav nav"
         "hero hero hero hero hero"
         "left main main aside right"
         "footer footer footer footer footer";
@@ -19,11 +19,20 @@ body {
 
 header {
     grid-area: header;
-    /* background-color: darkgray; */
-    z-index: 100;
+    /* padding: 15px; */
+    /* background-color: #4b4b4b; */
+    /* z-index: 100;
     position: absolute;
     top: 5px;
-    margin: 0 auto;
+    margin: 0 auto; */
+}
+
+header #site-info {
+    /* padding: 10px; */
+}
+
+header #site-name {
+    color: white;
 }
 
 nav {
@@ -31,12 +40,13 @@ nav {
 
 }
 
-a { text-decoration: none;}
-ul { list-style-type: none; float:right; }
-ul li {
+nav a { text-decoration: none;}
+nav ul { list-style-type: none; float:right; }
+nav ul li {
     display: inline;
 }
-ul li a { color: black; padding: 15px; }
+nav ul li a { color: white; padding: 5px 15px; }
+nav a:hover { text-decoration: underline;}
 
 #hero {
     grid-area: hero;
@@ -91,10 +101,24 @@ main {
 
 aside {
     grid-area: aside;
+    background-color: lightgray;
 }
 
 footer {
     grid-area: footer;
     background: lightgray;
 
+}
+
+@media (max-width: 1024px) {
+    body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40px 40px 80% repeat(2, 1fr);
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "hero hero hero"
+            "main main aside"
+            "footer footer footer";
+    }
 }
