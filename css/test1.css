@@ -9,7 +9,7 @@ body {
     grid-template-rows: 80% repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 5px;
-    background-color: beige;
+    background-color: #36326d;
     grid-template-areas:
         /* "header header nav nav nav" */
         "hero hero hero hero hero"
@@ -23,7 +23,7 @@ header {
     z-index: 100;
     position: absolute;
     top: 5px;
-    margin 0 auto;
+    margin: 0 auto;
 }
 
 nav {
