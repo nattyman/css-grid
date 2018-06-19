@@ -75,7 +75,7 @@ img {
 
 .main {
     grid-area: right;
-    grid-template-rows: 51px fit-content(30%);
+    grid-template-rows: 51px fit-content(30%) 40%;
     display: grid;
 }
 
@@ -88,6 +88,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, auto);
     text-align: center;
+    align-items: stretch;
 }
 
 #features i {
