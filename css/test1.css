@@ -8,10 +8,10 @@ body {
     display: grid;
     grid-template-rows: 1fr 80% repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
+    /* grid-gap: 5px; */
     background-color: #334;
     grid-template-areas:
-        "header header header nav nav"
+        "header header header header header"
         "hero hero hero hero hero"
         "left main main aside right"
         "footer footer footer footer footer";
@@ -19,33 +19,47 @@ body {
 
 header {
     grid-area: header;
+    /* grid-column-end: span 4; */
     /* padding: 15px; */
     /* background-color: #4b4b4b; */
     /* z-index: 100;
     position: absolute;
     top: 5px;
     margin: 0 auto; */
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    grid-template-areas:
+        "header-left header-right";
+    /* margin: 10px; */
 }
 
 header #site-info {
     /* padding: 10px; */
+    /* grid-area: header-left; */
+    /* grid-column: 1 / 2; */
 }
 
 header #site-name {
     color: white;
 }
 
-nav {
-    grid-area: nav;
+#logo>img {
+    max-height: 100px;
+    /* padding: 15px 15px 0 15px; */
+}
 
+nav {
+    justify-self: right;
+    grid-area: header-right
 }
 
 nav a { text-decoration: none;}
-nav ul { list-style-type: none; float:right; }
+nav ul { list-style-type: none; }
 nav ul li {
     display: inline;
 }
-nav ul li a { color: white; padding: 5px 15px; }
+nav ul li a { color: white; padding: 15px; }
 nav a:hover { text-decoration: underline;}
 
 #hero {
