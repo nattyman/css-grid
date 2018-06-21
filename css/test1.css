@@ -1,18 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
+/* Palette URL: http://paletton.com/#uid=23A0u0kt2ev00YD00jR++9Xk+lE */
+/* As hex codes */
+
+.color-primary-0 { color: #0C2B4B }	/* Main Primary color */
+.color-primary-1 { color: #F8F8F8 }
+.color-primary-2 { color: #676767 }
+.color-primary-3 { color: #001934 }
+.color-primary-4 { color: #2C4E70 }
+
+.color-complement-0 { color: #73490B }	/* Main Complement color */
+.color-complement-1 { color: #FFFFFF }
+.color-complement-2 { color: #9E9E9E }
+.color-complement-3 { color: #4F2F00 }
+.color-complement-4 { color: #AC7F3B }
+
 body, html { height: 100%;}
 
 body {
     margin:0;
     font-family: 'Montserrat', sans-serif;
     display: grid;
-    grid-template-rows: 1fr 80% repeat(2, 1fr);
+    grid-template-rows: 1fr 80% repeat(3, 1fr);
     grid-template-columns: repeat(5, 1fr);
-    /* grid-gap: 5px; */
-    background-color: #334;
+    grid-gap: 2px;
+    background-color: #0C2B4B;
     grid-template-areas:
         "header header header header header"
         "hero hero hero hero hero"
+        "pre-main pre-main pre-main pre-main pre-main"
         "left main main aside right"
         "footer footer footer footer footer";
 }
@@ -46,7 +62,7 @@ header #site-name {
 
 #logo>img {
     max-height: 100px;
-    /* padding: 15px 15px 0 15px; */
+    padding: 15px 15px 0 15px;
 }
 
 nav {
@@ -108,14 +124,81 @@ nav a:hover { text-decoration: underline;}
     padding: 0;
 }
 
+/* 
+----------------------
+
+WORKING AREA FOR PRE-MAIN
+
+----------------------
+*/
+
+#pre-main {
+    grid-area: pre-main;
+    display: grid;
+    grid-template-rows: 3em 2em 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". title ."
+    ". detail ."
+    ". form .";
+    /* place-content: center / center; */
+    justify-content: center;
+    background-color: #F8F8F8;
+    width: 100%;
+}
+
+#pre-main .form-title {
+    grid-area: title;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    place-self: center;
+}
+
+#pre-main .form-detail {
+    grid-area: detail;
+    place-self: center;
+    font-size: 1em;
+
+}
+
+#pre-main form {
+    grid-area: form;
+    /* width: auto; */
+    place-self: center;
+
+}
+
+#pre-main input[type=text] {
+    /* width: 1fr; */
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    background-color: rgb(202, 184, 157);
+}
+
+button {
+    background-color: #AC7F3B;
+    border: none;
+    padding: 10px 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 main {
     grid-area: main;
     background-color: white;
+    padding: 2em;
 }
 
 aside {
     grid-area: aside;
     background-color: lightgray;
+    padding: 1em;
+
 }
 
 footer {
