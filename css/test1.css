@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /* Palette URL: http://paletton.com/#uid=23A0u0kt2ev00YD00jR++9Xk+lE */
 /* As hex codes */
@@ -21,7 +22,7 @@ body {
     margin:0;
     font-family: 'Montserrat', sans-serif;
     display: grid;
-    grid-template-rows: 1fr 80% repeat(3, 1fr);
+    grid-template-rows: 1fr 80% repeat(3, 1fr) 40em 1fr;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 2px;
     background-color: #0C2B4B;
@@ -30,6 +31,8 @@ body {
         "hero hero hero hero hero"
         "pre-main pre-main pre-main pre-main pre-main"
         "left main main aside right"
+        "left fc fc fc right"
+        "full-img full-img full-img full-img full-img"
         "footer footer footer footer footer";
 }
 
@@ -89,15 +92,18 @@ nav a:hover { text-decoration: underline;}
     position: relative;
 }
 
-#hero-img {
+.full-img {
     width: 100%;
     height: 100%;
-    background-image: url("../img/autumn.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
+}
+
+#hero-img {
+    background-image: url("../img/autumn.jpg");
 }
 
 #hero-content {
@@ -136,11 +142,11 @@ WORKING AREA FOR PRE-MAIN
     grid-area: pre-main;
     display: grid;
     grid-template-rows: 3em 2em 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    ". title ."
-    ". detail ."
-    ". form .";
+    "title"
+    "detail"
+    "form";
     /* place-content: center / center; */
     justify-content: center;
     background-color: #F8F8F8;
@@ -201,21 +207,94 @@ aside {
 
 }
 
+#featured-card-section {
+    grid-area: fc;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "fc1 fc2 fc3 fc4";
+    /* place-content: center / center; */
+    justify-content: center;
+    background-color: #F8F8F8;
+    width: 100%;
+}
+
+.featured-card {
+    height: 1fr;
+    width: 1fr;
+    text-align: center;
+    padding: 2em;
+    color: #F8F8F8;
+    }
+
+    .featured-card i {
+        font-size: 5em;
+        text-shadow: #001934 1px 1px 2px;
+    }
+
+    .fc-text {
+        text-align: left;
+    }
+
+#fc1 {
+    grid-area: fc1;
+    background-color: #676767;
+}
+
+#fc1 i { 
+    color: #009940; 
+}
+
+#fc2 {
+    grid-area: fc2;
+    background-color: #4F2F00;
+}
+
+#fc2 i { 
+    color: #AC7F3B; 
+}
+
+#fc3 {
+    grid-area: fc3;
+    background-color: #9E9E9E;
+}
+
+#fc3 i { 
+    color: #0C2B4B; 
+}
+
+#fc4 {
+    grid-area: fc4;
+    background-color: #73490B;
+
+}
+
+#fc4 i { 
+    color: rgb(119, 97, 63); 
+}
+
+#full-img-2 {
+    grid-area: full-img;
+    background-image: url(../img/street-autumn.jpg);
+}
+
 footer {
     grid-area: footer;
     background: lightgray;
-
 }
 
 @media (max-width: 1024px) {
     body {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 40px 40px 80% repeat(2, 1fr);
+        grid-template-rows: 40px 40px 80% repeat(3, 1fr);
         grid-template-areas:
             "header header header"
             "nav nav nav"
             "hero hero hero"
+            "pre-main pre-main pre-main"
             "main main aside"
             "footer footer footer";
     }
+  
 }
